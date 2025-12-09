@@ -1,0 +1,39 @@
+.product_detail {
+  padding: 2rem;
+  max-width: 600px;
+  margin: 0 auto;
+  font-family: 'Segoe UI', sans-serif;
+  color: #222;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.product_detail h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.product_detail_image {
+  width: 100%;
+  max-height: 300px;
+  object-fit: contain;
+  margin-bottom: 1rem;
+}
+
+.product_detail_description {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.product_detail_price {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #007bff;
+}
+
+.product_detail_error {
+  color: red;
+  text-align: center;
+  margin-top: 2rem;
+}
