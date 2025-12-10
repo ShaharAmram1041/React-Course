@@ -89,10 +89,8 @@ function Home() {
       Close
     </button>
   </>
-)}
-
-
-    </div>
+  )}
+  </div>
   )
 }
 
