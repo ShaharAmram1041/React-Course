@@ -22,5 +22,6 @@ Home page:
 2. showSpinner -> show the spinner when the data is fetching.
 
 
+## --------------------------------------------------------------------------------------------------
 All the API-related data (products, isLoading, is error, error, refetch, isFetched etc') are server state, they need to be managed by the TanStack Query only.
 Other states like showList, showSpinner etc' are local UI state inside the component itself, and managed by the useState.
