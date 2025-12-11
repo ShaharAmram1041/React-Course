@@ -25,3 +25,31 @@ Home page:
 ## --------------------------------------------------------------------------------------------------
 All the API-related data (products, isLoading, is error, error, refetch, isFetched etc') are server state, they need to be managed by the TanStack Query only.
 Other states like showList, showSpinner etc' are local UI state inside the component itself, and managed by the useState.
+
+
+
+
+
+
+
+
+
+
+
+step 2:
+
+
+I created a global **Filter Sidebar** that is opened using a button in the header.  
+The sidebar appears on the **left side** as an overlay panel.
+
+### Context State and Actions:
+- `isOpen` (boolean): tracks if the sidebar is open.
+- `open()`: opens the sidebar.
+- `close()`: closes the sidebar.
+- `toggle()`: toggles sidebar open/closed.
+
+### Context Usage:
+- The **Context Provider** wraps the entire `<App />`.
+- The **Sidebar** reads `isOpen` to decide if it should be shown.
+- The **Header Filter Button** uses `toggle()` to open/close the sidebar.
+

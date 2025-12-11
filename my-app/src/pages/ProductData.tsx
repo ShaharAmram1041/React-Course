@@ -2,7 +2,7 @@ import { useParams } from 'react-router-dom'
 import { useQuery } from '@tanstack/react-query'
 import './ProductData.css'
 import { CircularProgress } from '@mui/material'
-import { fetchProductById } from '../api'
+import { fetchProductById } from '../shared/api'
 
   interface ProductDetails {
   id: number
