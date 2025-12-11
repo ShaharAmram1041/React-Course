@@ -2,8 +2,9 @@ import { useParams } from 'react-router-dom'
 import { useQuery } from '@tanstack/react-query'
 import './ProductData.css'
 import { CircularProgress } from '@mui/material'
+import { fetchProductById } from '../api'
 
-interface Product {
+  interface ProductDetails {
   id: number
   title: string
   description: string
@@ -11,19 +12,10 @@ interface Product {
   image: string
 }
 
-  // fetch the fake data
-const fetchProductById = async (id: string): Promise<Product> => {
-  const res = await fetch(`https://fakestoreapi.com/products/${id}`)
-  if (!res.ok) {
-    throw new Error('Failed to fetch product details')
-  }
-  return res.json()
-}
-
-function ProductData() {
+export function ProductData() {
   const { id } = useParams()
 
-  const { data, isLoading, isError, error } = useQuery<Product, Error>({
+  const { data, isLoading, isError, error } = useQuery<ProductDetails, Error>({
     queryKey: ['product', id],
     queryFn: () => fetchProductById(id!),
     enabled: !!id,
@@ -50,5 +42,3 @@ function ProductData() {
   </div>
   )
 }
-
-export default ProductData

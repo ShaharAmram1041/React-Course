@@ -4,9 +4,8 @@
 
 import './App.css'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
-import Home from "./pages/Home";
 import { Routes, Route } from "react-router-dom";
-import ProductData from './pages/ProductData';
+import { Home, ProductData } from "./pages";
 
 
 
@@ -20,7 +19,6 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/products/:id" element={<ProductData />} />
-
       </Routes>
 
       </QueryClientProvider>

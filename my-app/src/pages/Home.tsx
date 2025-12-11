@@ -3,26 +3,17 @@ import { useState, useEffect } from 'react'
 import { CircularProgress } from '@mui/material'
 import './Home.css'
 import { Link } from 'react-router-dom'
-
+import { fetchProducts } from '../api'
 
 interface Product {
   id: number
   title: string
 }
 
-function Home() {
+
+export function Home() {
   const [showList, setShowList] = useState(false)
   const [showSpinner, setShowSpinner] = useState(false)
-
-
-  // fetch the fake data
-  const fetchProducts = async (): Promise<Product[]> => {
-    const res = await fetch('https://fakestoreapi.com/products')
-    if (!res.ok) {
-      throw new Error('Failed to fetch products')
-    }
-    return res.json()
-  }
 
   const {
     data,
@@ -93,5 +84,3 @@ function Home() {
   </div>
   )
 }
-
-export default Home
