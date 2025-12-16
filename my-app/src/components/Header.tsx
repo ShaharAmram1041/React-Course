@@ -7,7 +7,7 @@ export function Header() {
 
   return (
     <header className="header">
-      <button className="filter-btn" onClick={toggle}>
+      <button className="filter-button" onClick={toggle}>
         Filter
       </button>
     </header>

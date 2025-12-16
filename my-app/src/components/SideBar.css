@@ -1,20 +1,20 @@
-/* src/components/Sidebar.css */
-
 .sidebar {
   position: fixed;
   top: 0;
-  left: -280px; /* Start hidden */
-  width: 280px;
+  left: -200px;
+  width: 200px;
   height: 100%;
   background-color: #f8f9fa;
   box-shadow: 2px 0 12px rgba(0, 0, 0, 0.2);
   padding: 1.5rem;
   transition: left 0.3s ease-in-out;
   z-index: 1000;
+    font-family: 'Segoe UI', sans-serif;
+
 }
 
 .sidebar.open {
-  left: 0; /* Slide in */
+  left: 0;
 }
 
 .close-btn {

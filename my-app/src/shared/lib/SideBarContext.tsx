@@ -1,6 +1,7 @@
-import { createContext, useState } from "react";
+import { createContext } from "react";
+import { useLocalStorageState } from "../index";
 
-interface SidebarContextType {
+export interface SidebarContextType {
   isOpen: boolean;
   open: () => void;
   close: () => void;
@@ -10,7 +11,10 @@ interface SidebarContextType {
 export const SidebarContext = createContext<SidebarContextType | null>(null);
 
 export function SidebarProvider({ children }: { children: React.ReactNode }) {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useLocalStorageState<boolean>(
+    "sidebar-open",
+    false
+  );
 
   const open = () => setIsOpen(true);
   const close = () => setIsOpen(false);

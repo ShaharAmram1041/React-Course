@@ -1,6 +1,6 @@
 // shared/lib/useSidebar.ts
 import { useContext } from "react";
-import { SidebarContext } from "./sideBarContext";
+import { SidebarContext } from "../index";
 
 export function useSidebar() {
   const ctx = useContext(SidebarContext);

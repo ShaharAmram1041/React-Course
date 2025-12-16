@@ -1,15 +1,14 @@
 
 .header {
-  font-family: 'Segoe UI', sans-serif;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-  background-color: #000000;
-  color: white;
+  justify-content: flex-end;
+  align-items: center;        
+  height: 60px;               
+  background-color: black; 
 }
 
-.filter-btn {
+
+.filter-button {
   background: white;
   color: #007bff;
   font-weight: bold;
@@ -18,6 +17,8 @@
   padding: 0.5rem 1rem;
   cursor: pointer;
   transition: background 0.2s ease;
+  margin-right: 20px;
+  font-family: 'Segoe UI', sans-serif;
 }
 
 .filter-btn:hover {
