@@ -1,8 +1,7 @@
-// src/stores/notifications.ts
 import { create } from "zustand";
 import { nanoid } from "nanoid";
 
-export type ToastType = "success" | "error" | "info";
+export type ToastType = "success" | "error";
 
 export interface Toast {
   id: string;
@@ -31,7 +30,7 @@ export const useToastStore = create<ToastStore>((set) => ({
       toasts: [...state.toasts, newToast],
     }));
 
-    // Optional auto-remove by timeout
+    // Auto-remove by timeout
     if (toast.timeout) {
       setTimeout(() => {
         set((state) => ({

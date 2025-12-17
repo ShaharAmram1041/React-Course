@@ -1,4 +1,3 @@
-// src/components/Sidebar.tsx
 import { useSidebar } from "../shared";
 import "./Sidebar.css";
 

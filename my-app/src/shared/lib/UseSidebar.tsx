@@ -1,4 +1,3 @@
-// shared/lib/useSidebar.ts
 import { useContext } from "react";
 import { SidebarContext } from "../index";
 

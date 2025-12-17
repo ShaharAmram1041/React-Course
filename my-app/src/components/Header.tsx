@@ -1,4 +1,3 @@
-// src/components/Header.tsx
 import { useSidebar } from "../shared";
 import "./Header.css";
 
