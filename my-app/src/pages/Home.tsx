@@ -4,7 +4,7 @@ import { CircularProgress } from '@mui/material'
 import './Home.css'
 import { Link } from 'react-router-dom'
 import { fetchProducts } from '../api'
-import { useToastStore } from "../shared/index";
+import { useToastStore } from "../store/Notification";
 
 
 interface Product {

@@ -1,4 +1,5 @@
-import { useLocalStorageState, SidebarContext } from "../index";
+import { useLocalStorageState } from "../hooks/useLocalStorageState";
+import { SidebarContext } from "../contexts/SideBarContext";
 
 
 export function SidebarProvider({ children }: { children: React.ReactNode }) {

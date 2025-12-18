@@ -5,7 +5,7 @@
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { Routes, Route } from "react-router-dom";
 import { Home, ProductData } from "./pages";
-import { SidebarProvider } from "./shared";
+import { SidebarProvider } from "./providers/SidebarProvider";
 import { Header, Sidebar, ToastHost } from './components';
 
 

@@ -1,4 +1,4 @@
-import { useSidebar } from "../shared";
+import { useSidebar } from "../hooks/UseSidebar";
 import "./Header.css";
 
 export function Header() {
