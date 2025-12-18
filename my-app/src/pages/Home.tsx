@@ -4,6 +4,8 @@ import { CircularProgress } from '@mui/material'
 import './Home.css'
 import { Link } from 'react-router-dom'
 import { fetchProducts } from '../api'
+import { useToastStore } from "../store/Notification";
+
 
 interface Product {
   id: number
@@ -41,6 +43,28 @@ export function Home() {
     setShowList(true)
     refetch()
   }
+
+  useEffect(() => {
+  if (isFetched && data && data.length > 0) {
+    useToastStore.getState().addToast({
+      type: "success",
+      message: `Fetched ${data.length} products successfully!`,
+      timeout: 3000,
+    });
+  }
+}, [isFetched, data]);
+
+useEffect(() => {
+  if (isError && error) {
+    useToastStore.getState().addToast({
+      type: "error",
+      message: `Failed to load products: ${error.message}`,
+      timeout: 4000,
+    });
+  }
+}, [isError, error]);
+
+
 
   return (
     <div className="home">
