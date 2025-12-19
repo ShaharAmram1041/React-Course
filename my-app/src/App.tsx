@@ -9,8 +9,6 @@ import { SidebarProvider } from "./providers/SidebarProvider";
 import { Header, Sidebar, ToastHost } from './components';
 
 
-
-
 const queryClient = new QueryClient()
 
 function App() {
