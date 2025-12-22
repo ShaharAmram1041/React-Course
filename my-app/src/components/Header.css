@@ -17,10 +17,36 @@
   padding: 0.5rem 1rem;
   cursor: pointer;
   transition: background 0.2s ease;
-  margin-right: 20px;
+  margin-inline-end: 20px;
   font-family: 'Segoe UI', sans-serif;
 }
 
 .filter-btn:hover {
   background: #e6e6e6;
+}
+
+.change-language-button {
+  background: white;
+  color: #007bff;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  margin-inline-end: 20px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.theme-switch-button{
+  background: white;
+  color: #007bff;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  margin-inline-end: 20px;
+  font-family: 'Segoe UI', sans-serif;
 }

@@ -9,7 +9,7 @@ i18n
   .init({
     fallbackLng: 'en',
     supportedLngs: ['en', 'he', 'he-IL'],
-    ns: ['common', 'products'],          // ✅ Declare namespaces
+    ns: ['common', 'products'],         
     defaultNS: 'common',
     debug: true,
 
@@ -17,7 +17,7 @@ i18n
       escapeValue: false
     },
 
-    resources // ✅ Use the imported resources object
+    resources
   });
-
+  
 export default i18n;

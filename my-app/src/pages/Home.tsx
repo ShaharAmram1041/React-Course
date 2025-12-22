@@ -1,21 +1,28 @@
-import { useQuery } from '@tanstack/react-query'
-import { useState, useEffect } from 'react'
-import { CircularProgress } from '@mui/material'
-import './Home.css'
-import { Link } from 'react-router-dom'
-import { fetchProducts } from '../api'
+import { useQuery } from '@tanstack/react-query';
+import { useState, useEffect } from 'react';
+import { CircularProgress } from '@mui/material';
+import { fetchProducts } from '../api';
 import { useToastStore } from "../store/Notification";
-
+import { useTranslation } from 'react-i18next';
+import { useNavigate } from 'react-router-dom';
+import { DataTable } from 'primereact/datatable';
+import { Column } from 'primereact/column';
+import { Button } from 'primereact/button';
+import './Home.css';
+import i18n from '../i18n/i18n';
 
 interface Product {
-  id: number
-  title: string
+  id: number;
+  title: string;
+  price: number;
+  category: string;
+  image: string;
 }
 
-
 export function Home() {
-  const [showList, setShowList] = useState(false)
-  const [showSpinner, setShowSpinner] = useState(false)
+  const [showSpinner, setShowSpinner] = useState(false);
+  const { t } = useTranslation(['common', 'products']);
+  const navigate = useNavigate();
 
   const {
     data,
@@ -28,49 +35,59 @@ export function Home() {
     queryKey: ['products'],
     queryFn: fetchProducts,
     enabled: false,
-  })
+  });
 
-  // timer for the spinner
   useEffect(() => {
     const timer = setTimeout(() => {
-      setShowSpinner(isLoading)
-    }, 300)
-    return () => clearTimeout(timer)
-  }, [isLoading])
-
-
-  const handleSearch = () => {
-    setShowList(true)
-    refetch()
-  }
+      setShowSpinner(isLoading);
+    }, 300);
+    return () => clearTimeout(timer);
+  }, [isLoading]);
 
   useEffect(() => {
-  if (isFetched && data && data.length > 0) {
-    useToastStore.getState().addToast({
-      type: "success",
-      message: `Fetched ${data.length} products successfully!`,
-      timeout: 3000,
-    });
-  }
-}, [isFetched, data]);
+    if (isFetched && data) {
+      useToastStore.getState().addToast({
+        type: "success",
+        message: t('fetchSuccess', { ns: 'products', count: data.length }),
+        timeout: 3000,
+      });
+    }
+  }, [isFetched, data, t]);
 
-useEffect(() => {
-  if (isError && error) {
-    useToastStore.getState().addToast({
-      type: "error",
-      message: `Failed to load products: ${error.message}`,
-      timeout: 4000,
-    });
-  }
-}, [isError, error]);
+  useEffect(() => {
+    if (isError && error) {
+      useToastStore.getState().addToast({
+        type: "error",
+        message: t('fetchError', { ns: 'products' }),
+        timeout: 4000,
+      });
+    }
+  }, [isError, error, t]);
+
+  const imageTemplate = (product: Product) => (
+  <img
+    src={product.image}
+    alt={product.title}
+    className="product-image"
+  />
+);
 
 
+  const actionTemplate = (product: Product) => (
+    <Button
+      label={t('view', { ns: 'products' })}
+      icon="pi pi-eye"
+      onClick={() => navigate(`/products/${product.id}`)}
+    />
+  );
 
   return (
     <div className="home">
-      <h1 className="home_title">Products</h1>
+      <h1 className="home_title">{t('title')}</h1>
 
-      <button className="search_button" onClick={handleSearch}>Search</button>
+      <button className="search_button" onClick={() => refetch()}>
+        {t('search')}
+      </button>
 
       {showSpinner && (
         <div className="home_spinner">
@@ -78,33 +95,31 @@ useEffect(() => {
         </div>
       )}
 
-      {isError && <p className="home_error">Error: {error.message}</p>}
+      {isError && (
+        <p className="home_error">
+          {t("error")}: {error.message}
+        </p>
+      )}
 
-      {isFetched && data && showList && (
-        <>
-        <div className="home_list_container">
-        <ul className="home_list">
-            {data.map((product) => (
-             <li key={product.id} className="home_list_item">
-                <Link
-                to={`/products/${product.id}`}
-                className="home_list_link"
-                >
-                {product.title}
-                </Link>
-            </li>
-            ))}
-        </ul>
-        </div>
+      {isFetched && data && (
+        <DataTable
+          key={i18n.language}
 
-    <button
-      className="close_button"
-      onClick={() => setShowList(false)}
-    >
-      Close
-    </button>
-  </>
-  )}
-  </div>
-  )
+          value={data}
+          paginator
+          rows={5}
+          sortMode="single"
+          dataKey="id"
+          emptyMessage={t('noProducts')}
+        >
+          <Column field="title" header={t('title', { ns: 'products' })} sortable />
+          
+          <Column field="price" header={t('price', { ns: 'products' })} sortable />
+          <Column field="category" header={t('category', { ns: 'products' })} />
+          <Column header={t('image', { ns: 'products' })} body={imageTemplate} />
+          <Column header={t('action', { ns: 'products' })} body={actionTemplate} />
+        </DataTable>
+      )}
+    </div>
+  );
 }

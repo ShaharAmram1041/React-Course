@@ -7,14 +7,22 @@
   background-color: #f8f9fa;
   box-shadow: 2px 0 12px rgba(0, 0, 0, 0.2);
   padding: 1.5rem;
-  transition: left 0.3s ease-in-out;
+  transition: left 0.3s ease-in-out, right 0.3s ease-in-out;
   z-index: 1000;
-    font-family: 'Segoe UI', sans-serif;
-
+  font-family: 'Segoe UI', sans-serif;
 }
 
 .sidebar.open {
   left: 0;
+}
+
+[dir="rtl"] .sidebar {
+  left: auto;           
+  right: -200px;        
+}
+
+[dir="rtl"] .sidebar.open {
+  right: 0;             
 }
 
 .close-btn {
@@ -27,6 +35,11 @@
   top: 1rem;
   right: 1rem;
   color: #333;
+}
+
+[dir="rtl"] .close-btn {
+  right: auto;
+  left: 1rem;
 }
 
 .sidebar h3 {

@@ -1,5 +1,22 @@
 {
-  "title": "Products",
   "list.empty": "No products available",
-  "detail.description": "Description"
+  "detail.description": "Description",
+  "fetchSuccess": "Fetched {{count}} products successfully!",
+  "fetchError": "Failed to load products",
+  "filters": {
+    "title": "Filters",
+    "electronics": "Electronics",
+    "clothing": "Clothing",
+    "jewelry": "Jewelry"
+  },
+  "description": "Description",
+  "price.details": "Price: <strong>${{price}}</strong>",
+  "back": "Back",
+
+  "title": "Products",
+  "view": "View",
+  "price": "Price",
+  "category": "Category",
+  "image": "Image",
+  "action": "Action"
 }

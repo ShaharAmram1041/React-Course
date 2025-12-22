@@ -30,6 +30,15 @@
   margin-bottom: 1rem;
 }
 
+.product_data_description_title {
+  font-weight: bold;
+  text-align: center;
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+
 .product_data_description {
   font-size: 1rem;
   margin-bottom: 1rem;
@@ -47,4 +56,15 @@
   color: red;
   text-align: center;
   margin-top: 2rem;
+}
+
+.product_data_back_button {
+  font-weight: bold;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-family: 'Segoe UI', sans-serif;
+  justify-content: center;
+  display: block;
+  margin: 1rem auto;
 }

@@ -1,6 +1,14 @@
 {
   "header": "Welcome",
+  "error": "Error",
+  "title": "Products",
+  "search": "Search",
+  "close": "close",
   "button.save": "Save",
   "button.cancel": "Cancel",
-  "button.filter": "Filter"
+  "button.filter": "Filter",
+  "changeLanguage": "עברית",
+  "darkTheme": "Dark Theme",
+  "lightTheme": "Light Theme"
 }
+
