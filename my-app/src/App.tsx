@@ -10,10 +10,9 @@ import { Header, Sidebar, ToastHost } from './components';
 
 
 
-
 const queryClient = new QueryClient()
 
-function App() {
+function App() {    
 
   return (
     <QueryClientProvider client={queryClient}>
@@ -21,8 +20,6 @@ function App() {
         <Header />
         <Sidebar />
           <ToastHost />
-
-        
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/products/:id" element={<ProductData />} />

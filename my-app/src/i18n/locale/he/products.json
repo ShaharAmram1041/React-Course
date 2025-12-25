@@ -1,0 +1,23 @@
+{
+  "list.empty": "אין מוצרים זמינים",
+  "detail.description": "תיאור",
+  "fetchSuccess": "נמצאו {{count}} מוצרים בהצלחה!",
+  "fetchError": "טעינת המוצרים נכשלה",
+    "filters": {
+    "title": "מסננים",
+    "electronics": "אלקטרוניקה",
+    "clothing": "ביגוד",
+    "jewelry": "תכשיטים"
+  },
+    "description": "תיאור",
+  "price.details": "מחיר: <strong>${{price}}</strong>",
+  "back": "חזור",
+
+    "title": "מוצרים",
+
+  "view": "צפה",
+  "price": "מחיר",
+  "category": "קטגוריה",
+  "image": "תמונה",
+  "action": "פעולה"
+}
