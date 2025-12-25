@@ -7,28 +7,12 @@ import { Routes, Route } from "react-router-dom";
 import { Home, ProductData } from "./pages";
 import { SidebarProvider } from "./providers/SidebarProvider";
 import { Header, Sidebar, ToastHost } from './components';
-import { useEffect } from "react";
-import { useTranslation } from "react-i18next";
 
 
 
 const queryClient = new QueryClient()
 
-function App() {
-  const { i18n } = useTranslation();
-
-  // Set direction based on language
-  useEffect(() => {
-    const html = document.documentElement;
-
-    if (i18n.language === 'he') {
-      html.setAttribute('dir', 'rtl');
-      html.setAttribute('lang', 'he');
-    } else {
-      html.setAttribute('dir', 'ltr');
-      html.setAttribute('lang', 'en');
-    }
-  }, [i18n.language]);
+function App() {    
 
   return (
     <QueryClientProvider client={queryClient}>
