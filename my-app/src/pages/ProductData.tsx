@@ -35,7 +35,7 @@ export function ProductData() {
     {isError && 
       <div className="product_data_error">{t('error')}: {error.message} </div>
     }
-    <div className="product_data">
+    <div className="product_data" data-testid="product-container">
       <h2>{data?.title}</h2>
       <img src={data?.image} alt={data?.title} className="product_data_image" />
 

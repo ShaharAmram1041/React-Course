@@ -11,7 +11,7 @@ async function gotoHomeEn(page: Page) {
 
 
 
-test('Unit - has title (small test)', async ({ page }) => {
+test('E2E - has title (small test)', async ({ page }) => {
     await gotoHomeEn(page);
     await page.getAttribute("h1","products");
 });
@@ -50,7 +50,7 @@ test('Integration - open first product and go back', async ({ page }) => {
   await expect(firstDataRow).toBeVisible();
 
   await firstDataRow.getByRole('button', { name: 'View' }).click();
-  const productContainer = page.locator('.product_data').first();
+  const productContainer = page.getByTestId('product-container');
   await expect(productContainer).toBeVisible();
   await expect(productContainer.locator('h2')).toBeVisible();
 
