@@ -1,15 +1,14 @@
 {
   "header": "ברוך הבא",
-    "error": "שגיאה",
-    "title": "מוצרים",
+  "error": "שגיאה",
+  "title": "מוצרים",
   "search": "חפש",
-    "close": "סגור",
-
+  "close": "סגור",
   "button.save": "שמור",
   "button.cancel": "בטל",
   "button.filter": "סינון",
-    "changeLanguage": "English",
-    "darkTheme": "ערכת צבע כהה",
-  "lightTheme": "ערכת צבע בהירה"
-
+  "changeLanguage": "English",
+  "darkTheme": "ערכת צבע כהה",
+  "lightTheme": "ערכת צבע בהירה",
+  "form": "טופס"
 }

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useSidebar } from "../hooks/UseSidebar";
 import "./Header.css";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
 
 
 
@@ -13,6 +14,8 @@ const THEMES = {
 export function Header() {
   const { toggle } = useSidebar();
   const { t, i18n } = useTranslation('common');
+  const navigate = useNavigate();
+
 
   
  const [theme, setTheme] = useState(() => {
@@ -61,6 +64,10 @@ export function Header() {
           {t('button.filter')}
       </button>
 
+       <button className="header-button-form" onClick={() => navigate("/form")}>
+        {t('form')}
+      </button>
+
       <button className="change-language-button" onClick={changeLanguage}>
           {t('changeLanguage')}
       </button>
@@ -74,3 +81,4 @@ export function Header() {
     </div>
   );
 }
+
