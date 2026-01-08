@@ -50,3 +50,23 @@
   margin-inline-end: 20px;
   font-family: 'Segoe UI', sans-serif;
 }
+
+.header-button-form {
+  background: white;
+  color: #007bff;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  margin-inline-end: 20px;
+  font-family: 'Segoe UI', sans-serif;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+}
+
+.nav-button:hover {
+  background: #e6e6e6;
+}

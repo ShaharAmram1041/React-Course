@@ -1,0 +1,61 @@
+{
+    "form": "טופס",
+
+  "title": "מילוי טופס",
+  "subtitle": "שדות המסומנים ב-* הם שדות חובה. אנו שומרים רק מידע שאינו רגיש.",
+
+  "fields": {
+    "fullName": "*שם מלא",
+    "email": "*אימייל",
+    "password": "*סיסמה",
+    "confirmPassword": "*אימות סיסמה",
+    "age": "*גיל",
+    "phone": "*מספר טלפון",
+    "website": "אתר אינטרנט",
+    "startDate": "*תאריך התחלה",
+    "country": "*מדינה",
+    "preferredContact": "*אמצעי יצירת קשר מועדף",
+    "satisfaction": "*רמת שביעות רצון",
+    "bio": "*תיאור קצר",
+    "newsletter": "הרשמה לעדכונים חודשיים",
+    "acceptTerms": "*אני מסכים/ה לתנאים ולהגבלות"
+  },
+
+  "options": {
+    "email": "אימייל",
+    "phone": "טלפון",
+    "text": "הודעת טקסט",
+    "selectCountry": "בחר מדינה",
+    "countries": {
+      "us": "ארצות הברית",
+      "is": "ישראל",
+      "ca": "קנדה",
+      "other": "אחר"
+    }
+  },
+
+  "errors": {
+    "required": "שדה זה הוא חובה *",
+    "fullNameMin": "יש להזין לפחות 2 תווים",
+    "emailInvalid": "יש להזין כתובת אימייל תקינה",
+    "passwordMin": "הסיסמה חייבת להכיל לפחות 8 תווים",
+    "passwordMatch": "הסיסמאות אינן תואמות",
+    "ageMin": "הגיל המינימלי הוא 13",
+    "ageMax": "יש להזין גיל תקין",
+    "phoneInvalid": "יש להזין מספר טלפון תקין",
+    "websiteInvalid": "יש להזין כתובת אתר תקינה",
+    "contactRequired": "יש לבחור אמצעי יצירת קשר",
+    "bioRequired": "ספרו לנו קצת על עצמכם",
+    "bioMin": "יש להזין לפחות 10 תווים",
+    "acceptTermsRequired": "יש לאשר את התנאים"
+  },
+
+  "buttons": {
+    "submit": "שלח",
+    "submitting": "שולח..."
+  },
+
+  "loading": {
+    "submitting": "הטופס נשלח, אנא המתן..."
+  }
+}

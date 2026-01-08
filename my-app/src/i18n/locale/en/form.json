@@ -1,0 +1,60 @@
+{
+  "form": "Form",
+  "title": "Fill the form",
+  "subtitle": "Fields marked with * are required. We only cache non-sensitive data.",
+
+  "fields": {
+    "fullName": "*Full name",
+    "email": "*Email",
+    "password": "*Password",
+    "confirmPassword": "*Confirm password",
+    "age": "*Age",
+    "phone": "*Phone number",
+    "website": "Website",
+    "startDate": "*Start date",
+    "country": "*Country",
+    "preferredContact": "*Preferred contact method",
+    "satisfaction": "*Satisfaction level",
+    "bio": "*Short bio",
+    "newsletter": "Subscribe to monthly updates",
+    "acceptTerms": "*I agree to the terms and conditions"
+  },
+
+  "options": {
+    "email": "Email",
+    "phone": "Phone",
+    "text": "Text",
+    "selectCountry": "Select a country",
+    "countries": {
+      "us": "United States",
+      "is": "Israel",
+      "ca": "Canada",
+      "other": "Other"
+    }
+  },
+
+  "errors": {
+    "required": "This field is required *",
+    "fullNameMin": "Enter at least 2 characters",
+    "emailInvalid": "Enter a valid email address",
+    "passwordMin": "Use at least 8 characters",
+    "passwordMatch": "Passwords must match",
+    "ageMin": "You must be at least 13",
+    "ageMax": "Enter a realistic age",
+    "phoneInvalid": "Enter a valid phone number",
+    "websiteInvalid": "Enter a valid URL",
+    "contactRequired": "Choose a contact method",
+    "bioRequired": "Tell us a little about yourself",
+    "bioMin": "Use at least 10 characters",
+    "acceptTermsRequired": "You must accept the terms"
+  },
+
+  "buttons": {
+    "submit": "Submit",
+    "submitting": "Submitting..."
+  },
+
+  "loading": {
+    "submitting": "Submitting your form, please wait..."
+  }
+}
