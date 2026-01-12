@@ -1,4 +1,3 @@
-// libs/hooks/src/productQueries.ts
 import { useInfiniteQuery, useMutation, useQuery } from "@tanstack/react-query";
 import {
   fetchProductById,

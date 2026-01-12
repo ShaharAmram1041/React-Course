@@ -1,4 +1,3 @@
-// libs/ui/src/AppCard.tsx
 import type { ReactNode, ComponentPropsWithoutRef } from "react";
 
 type AppCardProps = {

@@ -3,7 +3,7 @@ import CircularProgress from "@mui/material/CircularProgress";
 
 type GlobalLoaderProps = { open: boolean };
 
-export function GlobalLoader({ open }: GlobalLoaderProps) {
+export function GlobalLoader({ open }: Readonly<GlobalLoaderProps>) {
   return (
     <Backdrop
       open={open}
