@@ -3,5 +3,20 @@
   "projectType": "library",
   "root": "libs/ui",
   "sourceRoot": "libs/ui/src",
-  "tags": ["type:ui"]
+  "tags": ["type:ui"],
+  "targets": {
+    "lint": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "libs/ui",
+        "command": "eslint ."
+      }
+    },
+    "build": {
+      "executor": "nx:noop"
+    },
+    "test": {
+      "executor": "nx:noop"
+    }
+  }
 }

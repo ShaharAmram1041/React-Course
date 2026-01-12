@@ -3,5 +3,20 @@
   "projectType": "library",
   "root": "libs/hooks",
   "sourceRoot": "libs/hooks/src",
-  "tags": ["type:hooks"]
+  "tags": ["type:hooks"],
+  "targets": {
+    "lint": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "libs/hooks",
+        "command": "eslint ."
+      }
+    },
+    "build": {
+      "executor": "nx:noop"
+    },
+    "test": {
+      "executor": "nx:noop"
+    }
+  }
 }

@@ -7,7 +7,8 @@
     "dev": "nx serve",
     "build": "tsc -b && nx vite:build",
     "lint": "eslint .",
-    "preview": "nx vite:preview"
+    "preview": "nx vite:preview",
+    "test": "node -e \"console.log('no tests')\""
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",

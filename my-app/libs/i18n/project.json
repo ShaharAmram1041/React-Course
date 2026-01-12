@@ -3,5 +3,20 @@
   "projectType": "library",
   "root": "libs/i18n",
   "sourceRoot": "libs/i18n/src",
-  "tags": ["type:i18n"]
+  "tags": ["type:i18n"],
+  "targets": {
+    "lint": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "libs/i18n",
+        "command": "eslint ."
+      }
+    },
+    "build": {
+      "executor": "nx:noop"
+    },
+    "test": {
+      "executor": "nx:noop"
+    }
+  }
 }
