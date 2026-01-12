@@ -25,7 +25,7 @@ export function useProductQuery(id?: string) {
 export function useProductsInfiniteQuery() {
   return useInfiniteQuery<Product[], Error>({
     queryKey: ["products", "infinite"],
-    queryFn: ({ pageParam = 1 }) => fetchProducts(pageParam as number),
+    queryFn: () => fetchProducts(),
     initialPageParam: 1,
     getNextPageParam: (lastPage, pages) => pages.length + 1,
   });
