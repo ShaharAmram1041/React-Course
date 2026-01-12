@@ -1,0 +1,7 @@
+{
+  "name": "ui",
+  "projectType": "library",
+  "root": "libs/ui",
+  "sourceRoot": "libs/ui/src",
+  "tags": ["type:ui"]
+}

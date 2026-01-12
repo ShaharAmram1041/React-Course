@@ -1,0 +1,7 @@
+{
+  "name": "hooks",
+  "projectType": "library",
+  "root": "libs/hooks",
+  "sourceRoot": "libs/hooks/src",
+  "tags": ["type:hooks"]
+}
