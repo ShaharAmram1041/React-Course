@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useSidebar } from "../hooks/UseSidebar";
 import "./Header.css";
 import { useTranslation } from "react-i18next";
+import { getNextLang } from "@my-app/i18n";
 import { useNavigate } from "react-router-dom";
 
 
@@ -24,8 +25,7 @@ export function Header() {
 
 
   const changeLanguage = () => {
-    const newLang = i18n.language === 'en' ? 'he' : 'en';
-    i18n.changeLanguage(newLang);
+    i18n.changeLanguage(getNextLang(i18n.language));
   };
 
   const changeTheme = () => {

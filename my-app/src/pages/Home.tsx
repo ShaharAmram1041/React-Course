@@ -1,23 +1,14 @@
-import { useQuery } from '@tanstack/react-query';
-import { useState, useEffect } from 'react';
-import { CircularProgress } from '@mui/material';
-import { fetchProducts } from '../api';
-import { useToastStore } from "../store/Notification";
-import { useTranslation } from 'react-i18next';
-import { useNavigate } from 'react-router-dom';
-import { DataTable } from 'primereact/datatable';
-import { Column } from 'primereact/column';
-import { Button } from 'primereact/button';
-import './Home.css';
-import i18n from '../i18n/i18n';
-
-interface Product {
-  id: number;
-  title: string;
-  price: number;
-  category: string;
-  image: string;
-}
+import { useState, useEffect } from "react";
+import { CircularProgress } from "@mui/material";
+import { useProductsQuery, type Product } from "@my-app/hooks";
+import { useToastStore } from "@my-app/ui";
+import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
+import { DataTable } from "primereact/datatable";
+import { Column } from "primereact/column";
+import { Button } from "primereact/button";
+import "./Home.css";
+import { i18n } from "@my-app/i18n";
 
 export function Home() {
   const [showSpinner, setShowSpinner] = useState(false);
@@ -31,11 +22,7 @@ export function Home() {
     error,
     refetch,
     isFetched,
-  } = useQuery<Product[], Error>({
-    queryKey: ['products'],
-    queryFn: fetchProducts,
-    enabled: false,
-  });
+  } = useProductsQuery();
 
   useEffect(() => {
     const timer = setTimeout(() => {

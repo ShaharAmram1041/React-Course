@@ -1,4 +1,4 @@
-import { useToastStore } from "../store/Notification";
+import { useToastStore } from "./Notification";
 import "./ToastHost.css";
 
 export function ToastHost() {
