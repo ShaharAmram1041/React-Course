@@ -86,7 +86,13 @@ const watchedValues = useWatch({
     "email",
     "age",
     "phone",
+    "website",
+    "startDate",
     "country",
+    "preferredContact",
+    "newsletter",
+    "acceptTerms",
+    "satisfaction",
     "bio",
   ],
 });
