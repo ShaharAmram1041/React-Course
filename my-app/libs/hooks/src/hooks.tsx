@@ -27,7 +27,7 @@ export function useProductsInfiniteQuery() {
     queryKey: ["products", "infinite"],
     queryFn: () => fetchProducts(),
     initialPageParam: 1,
-    getNextPageParam: (lastPage, pages) => pages.length + 1,
+    getNextPageParam: (_lastPage, pages) => pages.length + 1,
   });
 }
 
