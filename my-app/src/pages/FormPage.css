@@ -1,0 +1,152 @@
+:root {
+  --form-bg: #f3efe9;
+  --form-card: #ffffff;
+  --form-accent: #0b5d9a;
+  --form-muted: #6b6b6b;
+  --form-border: #d6d0c9;
+  --form-error: #b1002b;
+}
+
+.form-page {
+  min-height: 100vh;
+  padding: 3rem 1.5rem 4rem;
+  background: radial-gradient(circle at top, #fff7ef 0%, #f3efe9 55%, #ece3d8 100%);
+  display: flex;
+  justify-content: center;
+}
+
+.form-card {
+  width: min(820px, 100%);
+  background: var(--form-card);
+  border-radius: 24px;
+  padding: 2.5rem 2.75rem 3rem;
+  box-shadow: 0 18px 45px rgba(39, 34, 26, 0.18);
+  border: 1px solid rgba(39, 34, 26, 0.08);
+}
+
+.form-header h1 {
+  font-size: clamp(2rem, 3vw, 2.6rem);
+  margin: 0.5rem 0;
+  color: #2d251c;
+}
+
+.form-eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.75rem;
+  color: var(--form-muted);
+  margin: 0;
+}
+
+.form-subtitle {
+  margin: 0.25rem 0 2rem;
+  color: var(--form-muted);
+}
+
+.form-grid {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.field {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.field label {
+  font-weight: 600;
+  color: #3c3225;
+}
+
+input,
+select,
+textarea {
+    color: #2d251c;
+
+  width: 100%;
+  padding: 0.7rem 0.9rem;
+  border: 1px solid var(--form-border);
+  border-radius: 12px;
+  background-color: #fff;
+  font-size: 1rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+textarea {
+  resize: vertical;
+}
+
+fieldset.fieldset {
+  border: 1px solid var(--form-border);
+  border-radius: 16px;
+  padding: 1rem 1.25rem 1.25rem;
+}
+
+fieldset.fieldset legend {
+  padding: 0 0.5rem;
+  font-weight: 600;
+  color: #3c3225;
+}
+
+.option-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-weight: 500;
+  color: #3c3225;
+}
+
+.option input {
+  width: auto;
+}
+
+.error {
+  color: var(--form-error);
+  font-size: 0.9rem;
+}
+
+.actions {
+  margin-top: 1rem;
+}
+
+button {
+  padding: 0.9rem 1rem;
+  border: none;
+  border-radius: 999px;
+  background: var(--form-accent);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--form-accent);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px rgba(11, 93, 154, 0.18);
+}
+
+@media (max-width: 640px) {
+  .form-card {
+    padding: 2rem 1.5rem 2.5rem;
+  }
+
+  .option-grid {
+    flex-direction: column;
+  }
+}
