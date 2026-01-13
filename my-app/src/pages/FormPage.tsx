@@ -1,7 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { useForm, useWatch } from "react-hook-form";
-import CircularProgress from "@mui/material/CircularProgress";
-import Backdrop from "@mui/material/Backdrop";
+import { GlobalLoader, AppCard } from "@my-app/ui";
 import "./FormPage.css";
 import { useTranslation } from "react-i18next";
 
@@ -123,18 +122,10 @@ const watchedValues = useWatch({
 
   return (
     <div>
-      <Backdrop
-        open={isLoading}
-        sx={{
-          color: "#fff",
-          zIndex: (theme) => theme.zIndex.modal + 1,
-        }}
-        >
-        <CircularProgress color="inherit" />
-      </Backdrop>
+      <GlobalLoader open={isLoading} />
 
       <div className="form-page">
-        <section className="form-card" aria-labelledby="form-title">
+        <AppCard className="form-card" aria-labelledby="form-title">
           <header className="form-header">
             <h1 id="form-title">{t('title')}</h1>
             <p className="form-subtitle">{t('subtitle')}</p>
@@ -448,7 +439,7 @@ const watchedValues = useWatch({
               </button>
             </div>
           </form>
-        </section>
+        </AppCard>
       </div>
     </div>
   );

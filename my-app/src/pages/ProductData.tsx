@@ -1,27 +1,14 @@
-import { Link, useParams } from 'react-router-dom'
-import { useQuery } from '@tanstack/react-query'
-import './ProductData.css'
-import { CircularProgress } from '@mui/material'
-import { fetchProductById } from '../api'
-import { Trans, useTranslation } from 'react-i18next'
-
-  interface ProductDetails {
-  id: number
-  title: string
-  description: string
-  price: number
-  image: string
-}
+import { Link, useParams } from "react-router-dom";
+import "./ProductData.css";
+import { CircularProgress } from "@mui/material";
+import { useProductQuery } from "@my-app/hooks";
+import { Trans, useTranslation } from "react-i18next";
 
 export function ProductData() {
   const { id } = useParams()
   const { t } = useTranslation('products')
 
-  const { data, isLoading, isError, error } = useQuery<ProductDetails, Error>({
-    queryKey: ['product', id],
-    queryFn: () => fetchProductById(id!),
-    enabled: !!id,
-  })
+  const { data, isLoading, isError, error } = useProductQuery(id);
 
 
 

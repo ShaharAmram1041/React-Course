@@ -18,7 +18,7 @@ export interface Product {
 
 
 
-  interface ProductDetails {
+  export interface ProductDetails {
   id: number
   title: string
   description: string

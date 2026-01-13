@@ -1,22 +1,48 @@
-1. Starting Advanced 1 from commit 235ebcaa. API used: 'https://fakestoreapi.com/products'
 
+## How to run
+- Serve: `npx nx serve my-app`
+- Build: `npx nx build my-app`
+- Lint: `npx nx lint my-app`
+- Test: `npx nx test my-app`
 
-2. The locales i used is English and Hebrew.
+## Workspace structure
+- App: `my-app`
+- Libs: `libs/ui` , `libs/hooks`, `libs/i18n`
 
+## Module boundaries
+- Apps can depend on all libs.
+- `type:ui` can depend on `type:hooks` and `type:i18n`.
+- `type:hooks` can depend on `type:i18n`.
+- Libs cannot import from apps.
 
-3. 
-**Interpolation**
-   - `fetchSuccess` → Used in `Home.tsx` toast notification after product fetch
+## (A4)
+Command:
+```
+npx nx affected --targets=lint --targets=build --targets=test --uncommitted
+```
+Output:
+```
+NX   Running targets lint, build, test for 4 projects:
+- my-app
+- hooks
+- i18n
+- ui
+NX   Successfully ran targets lint, build, test for 4 projects
+```
 
-**Pluralization**
-   - `fetchSuccess` → Uses `count` to show singular/plural messages correctly
+Command:
+```
+npx nx show projects --affected --target build
+```
+Output:
+```
+my-app
+hooks
+i18n
+ui
+```
 
-**<Trans /> usage**
-   - `price.details` → Used in `ProductData.tsx` to format the price with `<strong>`
-
-
-
-4. LocalStorage Key & Default Theme:
-
-LocalStorage Key: theme
-Default Theme: lara-light-blue from 
+## CI command
+```
+nx affected -t lint,test,build --base=origin/main --head=HEAD
+```
